@@ -2361,7 +2361,7 @@ store._ddl['txout_approx'],
                    block_total_satoshis, block_satoshi_seconds,
                    block_total_ss
               FROM block
-             WHERE block_hash = ?
+             WHERE block_hash = (_binary ?)
         """, (store.hashin(hash),))
 
         if not block_row:
